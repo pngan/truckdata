@@ -1,0 +1,17 @@
+{
+  "hosting": [
+    {
+      "app": {
+        "project": "truck",
+        "target": "build",
+        "configuration": "production",
+        "path": "dist/truck"
+      },
+      "azureHosting": {
+        "subscription": "377f3497-63dd-483a-97de-1c72da6ae978",
+        "resourceGroupName": "truck-static-deploy",
+        "account": "truckstatic"
+      }
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>Welcome to {{ title }}!
+  </h1>
+  <img width="300" alt="Angular Logo"
+    src="https://previews.123rf.com/images/yayayoy/yayayoy1304/yayayoy130400005/19017751-cartoon-truck.jpg">
+  </div>
+  <h2>Enter truck data: </h2>
+  <mat-form-field>
+          <input matInput placeholder="Speed" [(ngModel)]="speed">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Latitude" [(ngModel)]="latitude">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Longitude" [(ngModel)]="longitude">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Temperature" [(ngModel)]="temperature">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Pressure" [(ngModel)]="pressure">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Message" [(ngModel)]="message">
+  </mat-form-field>
+      <button type="button" (click)="insertData()">Submit Truck Data</button>
+
+  <h2>Latest Truck Data</h2>
+  <table mat-table [dataSource]="truckData">
+
+    <ng-container matColumnDef="companyId">
+      <th mat-header-cell *matHeaderCellDef> Company </th>
+      <td mat-cell *matCellDef="let truckData"> {{truckData.CustomerId}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="truckId">
+      <th mat-header-cell *matHeaderCellDef> Truck </th>
+      <td mat-cell *matCellDef="let truckData"> {{truckData.TruckId}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="speed">
+      <th mat-header-cell *matHeaderCellDef> Speed </th>
+      <td mat-cell *matCellDef="let truckData"> {{truckData.Speed}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="latitude">
+      <th mat-header-cell *matHeaderCellDef> Latitude </th>
+      <td mat-cell *matCellDef="let truckData"> {{truckData.Latitude}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="longtitude">
+      <th mat-header-cell *matHeaderCellDef> Longitude </th>
+      <td mat-cell *matCellDef="let truckData"> {{truckData.Longitude}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="temperature">
+      <th mat-header-cell *matHeaderCellDef> Temperature </th>
+      <td mat-cell *matCellDef="let truckData"> {{truckData.Temperature}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="pressure">
+      <th mat-header-cell *matHeaderCellDef> Pressure </th>
+      <td mat-cell *matCellDef="let truckData"> {{truckData.Pressure}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="driversMessage">
+      <th mat-header-cell *matHeaderCellDef> Message </th>
+      <td mat-cell *matCellDef="let truckData"> {{truckData.DriversMessage}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="tableColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: tableColumns;"></tr>
+  </table>
